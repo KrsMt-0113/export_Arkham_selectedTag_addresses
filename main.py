@@ -37,7 +37,7 @@ while True:
     except Exception as e:
         print(f"Error fetching page {page}: {e}")
         continue
-    if response.json().get("allAddressesFetched"):
+    if len(result) >= total:
         break
 
 with open("cex_addresses.csv", "w", encoding="utf-8") as f:
