@@ -7,7 +7,10 @@ headers = {
     "API-Key": "YOUR_API_KEY"
 }
 # fill the tag after 'tag=' ⬇️
-url = "https://api.arkm.com/tag/top?tag=&page="
+url = "https://api.arkm.com/tag/top?tag=YOUR_TAG&page="
+
+total = requests.get("https://api.arkm.com/tag/YOUR_TAG/count_addresses", headers= headers).json()
+print("Total addresses to fetch:", total)
 
 result = []
 
